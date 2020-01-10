@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>01_基础_测试.md练习题</title>
+  <link href="https://cdn.bootcss.com/semantic-ui/2.4.1/semantic.min.css" rel="stylesheet" />
+  <link href="https://cdn.bootcss.com/github-markdown-css/3.0.1/github-markdown.css" rel="stylesheet">
+  <link href="https://fanyoufu.github.io/code/util.css?a=2" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.17.1/build/styles/default.min.css">
+  <style>
+    body {
+      color: #123;
+      background-color: #f3f5f6;
+    }
+  </style>
+</head>
+
+<body class="test">
+  <div class="ui grid page">
+    <div class="column">
+      <div class="ui segment _p3">
+        <h2 class="ui header dividing">
+          <div class="content">
+            01_基础_测试.md-检测题
+          </div>
+        </h2>
+        <div class="ui relaxed list link">
+
+          
+            <div class="ui segment accordion">
+              <div class=" title">
+                <i class="dropdown icon"></i>题目1 
+              </div>
+              <div class="active content">
+                <p>vuex的作用是什么？</p>
+
+              </div>
+
+              <div class=" title">
+                <i class="dropdown icon"></i>答案
+        
+              </div>
+              <div class=" content">
+                <p>对数据进行集中管理。</p>
+
+              </div>
+            </div>
+          
+            <div class="ui segment accordion">
+              <div class=" title">
+                <i class="dropdown icon"></i>题目2 
+              </div>
+              <div class="active content">
+                <p>补全如下使用vuex时的伪代码：</p>
+<pre><code class="language-javascript">import Vuex from 'vuex'
+var store = new ________
+export default store
+</code></pre>
+<p>把new后面缺少的代码补起来。</p>
+
+              </div>
+
+              <div class=" title">
+                <i class="dropdown icon"></i>答案
+        
+              </div>
+              <div class=" content">
+                <p>参考如下：</p>
+<pre><code class="language-javascript">var store = new Vuex.Store({
+	state:{},
+    getters:{},
+    mutations:{},
+    actions:{}
+})
+export default store
+</code></pre>
+
+              </div>
+            </div>
+          
+            <div class="ui segment accordion">
+              <div class=" title">
+                <i class="dropdown icon"></i>题目3 
+              </div>
+              <div class="active content">
+                <p>如何理解vuex中的state？</p>
+
+              </div>
+
+              <div class=" title">
+                <i class="dropdown icon"></i>答案
+        
+              </div>
+              <div class=" content">
+                <p>它是一个对象，用来保存所有的公共数据。</p>
+
+              </div>
+            </div>
+          
+            <div class="ui segment accordion">
+              <div class=" title">
+                <i class="dropdown icon"></i>题目4 
+              </div>
+              <div class="active content">
+                <p>在组件内部获取vuex中的数据有哪些方法？</p>
+
+              </div>
+
+              <div class=" title">
+                <i class="dropdown icon"></i>答案
+        
+              </div>
+              <div class=" content">
+                <p>方法一：直接通过<code>this.$store.state.数据</code>来获取。</p>
+<p>方法二：借用mapState，把数据映射成组件内的计算属性后，再来使用。</p>
+<p>方法二：在vuex中创建getter，然后在组件内部通过getter来获取。</p>
+
+              </div>
+            </div>
+          
+            <div class="ui segment accordion">
+              <div class=" title">
+                <i class="dropdown icon"></i>题目5 
+              </div>
+              <div class="active content">
+                <p>调用</p>
+
+              </div>
+
+              <div class=" title">
+                <i class="dropdown icon"></i>答案
+        
+              </div>
+              <div class=" content">
+                <p>方法一：直接通过<code>this.$store.state.数据</code>来获取。</p>
+
+              </div>
+            </div>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="../static/js/baidu.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.17.1/build/highlight.min.js"></script>
+  <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdn.bootcss.com/semantic-ui/2.4.1/semantic.min.js"></script>
+  <script src="https://cdn.bootcss.com/semantic-ui/2.4.1/components/accordion.js"></script>
+  <script>
+          $('.ui.accordion')
+  .accordion()
+;
+  </script>
+
+  </body>
+</html>

@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>03_原生ajax_测试.md练习题</title>
+  <link href="https://cdn.bootcss.com/semantic-ui/2.4.1/semantic.min.css" rel="stylesheet" />
+  <link href="https://cdn.bootcss.com/github-markdown-css/3.0.1/github-markdown.css" rel="stylesheet">
+  <link href="https://fanyoufu.github.io/code/util.css?a=2" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.17.1/build/styles/default.min.css">
+  <style>
+    body {
+      color: #123;
+      background-color: #f3f5f6;
+    }
+  </style>
+</head>
+
+<body class="test">
+  <div class="ui grid page">
+    <div class="column">
+      <div class="ui segment _p3">
+        <h2 class="ui header dividing">
+          <div class="content">
+            03_原生ajax_测试.md-检测题
+          </div>
+        </h2>
+        <div class="ui relaxed list link">
+
+          
+            <div class="ui segment accordion">
+              <div class=" title">
+                <i class="dropdown icon"></i>题目1 
+              </div>
+              <div class="active content">
+                <p>实现ajax功能的那个对象是？</p>
+
+              </div>
+
+              <div class=" title">
+                <i class="dropdown icon"></i>答案
+        
+              </div>
+              <div class=" content">
+                <p>XMLHttpRequest</p>
+
+              </div>
+            </div>
+          
+            <div class="ui segment accordion">
+              <div class=" title">
+                <i class="dropdown icon"></i>题目2 
+              </div>
+              <div class="active content">
+                <p>使用原生ajax的基本步骤是什么，请写出伪代码。</p>
+
+              </div>
+
+              <div class=" title">
+                <i class="dropdown icon"></i>答案
+        
+              </div>
+              <div class=" content">
+                <pre><code>// 第1步： 新建一个XMLHttpRequest对象(xhr)
+var xhr = new XMLHttpRequest();
+
+// 第2步： 设置请求。 
+// 格式：xhr.open(请求的方式, 请求的url地址);
+xhr.open('请求类型', '接口地址');
+
+// 第3步：设置回调函数
+
+xhr.onload = function() {
+    console.info('从服务器返回的数据',xhr.responseText);
+};
+// 第4步： 发送请求
+xhr.send();
+</code></pre>
+
+              </div>
+            </div>
+          
+            <div class="ui segment accordion">
+              <div class=" title">
+                <i class="dropdown icon"></i>题目3 
+              </div>
+              <div class="active content">
+                <p>查询字符串的格式是怎样的，请举例说明。</p>
+
+              </div>
+
+              <div class=" title">
+                <i class="dropdown icon"></i>答案
+        
+              </div>
+              <div class=" content">
+                <p>格式：在url的后面加上英文的？再加键值对格式的信息。</p>
+<pre><code>url?参数1=值1&amp;参数2=值2&amp;参数3=值3...
+</code></pre>
+
+              </div>
+            </div>
+          
+            <div class="ui segment accordion">
+              <div class=" title">
+                <i class="dropdown icon"></i>题目4 
+              </div>
+              <div class="active content">
+                <p>在用原生ajax时，使用post类型的接口与get类型的接口有何区别？</p>
+
+              </div>
+
+              <div class=" title">
+                <i class="dropdown icon"></i>答案
+        
+              </div>
+              <div class=" content">
+                <p>get类型的接口参数以查询字符串格式附在url中。</p>
+<p>post类型的接口写在send()中。还要明确设置请求头。</p>
+
+              </div>
+            </div>
+          
+            <div class="ui segment accordion">
+              <div class=" title">
+                <i class="dropdown icon"></i>题目5 
+              </div>
+              <div class="active content">
+                <p>如何通过浏览器的开发者工具查看ajax传递的参数？</p>
+
+              </div>
+
+              <div class=" title">
+                <i class="dropdown icon"></i>答案
+        
+              </div>
+              <div class=" content">
+                <p>在network面板中，选中当前ajax请求，就可以看到所传递的参数了。</p>
+
+              </div>
+            </div>
+          
+            <div class="ui segment accordion">
+              <div class=" title">
+                <i class="dropdown icon"></i>题目6 
+              </div>
+              <div class="active content">
+                <p>把js对象转成json字符串的方法是？</p>
+
+              </div>
+
+              <div class=" title">
+                <i class="dropdown icon"></i>答案
+        
+              </div>
+              <div class=" content">
+                <p>JSON.stringify()</p>
+
+              </div>
+            </div>
+          
+            <div class="ui segment accordion">
+              <div class=" title">
+                <i class="dropdown icon"></i>题目7 
+              </div>
+              <div class="active content">
+                <p>把json字符串转回成对象的方法是？</p>
+
+              </div>
+
+              <div class=" title">
+                <i class="dropdown icon"></i>答案
+        
+              </div>
+              <div class=" content">
+                <p>JSON.parse()</p>
+
+              </div>
+            </div>
+          
+            <div class="ui segment accordion">
+              <div class=" title">
+                <i class="dropdown icon"></i>题目8 
+              </div>
+              <div class="active content">
+                <p>XMLHttpRequest对象的(1)属性值等于(2)时，表示ajax请求已经获取完了数据。</p>
+
+              </div>
+
+              <div class=" title">
+                <i class="dropdown icon"></i>答案
+        
+              </div>
+              <div class=" content">
+                <p>(1) readyState (2) 4</p>
+
+              </div>
+            </div>
+          
+            <div class="ui segment accordion">
+              <div class=" title">
+                <i class="dropdown icon"></i>题目9 
+              </div>
+              <div class="active content">
+                <p>在发get请求时，在url中补充一个<code>_=时间戳</code>有什么用处？ 你在能某个网站中找出这种用法吗？</p>
+
+              </div>
+
+              <div class=" title">
+                <i class="dropdown icon"></i>答案
+        
+              </div>
+              <div class=" content">
+                <p>用于解决ie缓存的问题。</p>
+
+              </div>
+            </div>
+          
+            <div class="ui segment accordion">
+              <div class=" title">
+                <i class="dropdown icon"></i>题目10 
+              </div>
+              <div class="active content">
+                <p>写一个函数，把查询字符串转成对象</p>
+<pre><code class="language-javascript">function f(str){
+    // 你的代码
+	// return {}    
+}
+// 测试用例：
+console.info(f('a=1&amp;b=2&amp;c=jame')); 
+// 得到js对象 {a:1,b:2,c:jame}
+</code></pre>
+
+              </div>
+
+              <div class=" title">
+                <i class="dropdown icon"></i>答案
+        
+              </div>
+              <div class=" content">
+                <pre><code>
+</code></pre>
+
+              </div>
+            </div>
+          
+            <div class="ui segment accordion">
+              <div class=" title">
+                <i class="dropdown icon"></i>题目11 
+              </div>
+              <div class="active content">
+                <p>写函数，把对象转成查询字符串</p>
+<pre><code class="language-javascript">function f(obj){
+    // 你的代码
+	// return {}  
+}
+// 测试用例：
+console.info(f({a:1,b:2,c:jame})); 
+// 得到 'a=1&amp;b=2&amp;c=jame'
+</code></pre>
+
+              </div>
+
+              <div class=" title">
+                <i class="dropdown icon"></i>答案
+        
+              </div>
+              <div class=" content">
+                <pre><code class="language-javascript"> function f(obj){
+     var arr = [];
+     for (var key in obj) {
+         // 找出对象的全部的属性
+         arr.push(key + '=' + obj[key]);
+     }
+     return arr.join(&quot;&amp;&quot;) 
+}
+
+</code></pre>
+
+              </div>
+            </div>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="../static/js/baidu.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.17.1/build/highlight.min.js"></script>
+  <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdn.bootcss.com/semantic-ui/2.4.1/semantic.min.js"></script>
+  <script src="https://cdn.bootcss.com/semantic-ui/2.4.1/components/accordion.js"></script>
+  <script>
+          $('.ui.accordion')
+  .accordion()
+;
+  </script>
+
+  </body>
+</html>

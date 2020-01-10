@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>01_认识并使用ajax_测试.md练习题</title>
+  <link href="https://cdn.bootcss.com/semantic-ui/2.4.1/semantic.min.css" rel="stylesheet" />
+  <link href="https://cdn.bootcss.com/github-markdown-css/3.0.1/github-markdown.css" rel="stylesheet">
+  <link href="https://fanyoufu.github.io/code/util.css?a=2" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.17.1/build/styles/default.min.css">
+  <style>
+    body {
+      color: #123;
+      background-color: #f3f5f6;
+    }
+  </style>
+</head>
+
+<body class="test">
+  <div class="ui grid page">
+    <div class="column">
+      <div class="ui segment _p3">
+        <h2 class="ui header dividing">
+          <div class="content">
+            01_认识并使用ajax_测试.md-检测题
+          </div>
+        </h2>
+        <div class="ui relaxed list link">
+
+          
+            <div class="ui segment accordion">
+              <div class=" title">
+                <i class="dropdown icon"></i>题目1 
+              </div>
+              <div class="active content">
+                <p>网页上的四要素是什么？</p>
+
+              </div>
+
+              <div class=" title">
+                <i class="dropdown icon"></i>答案
+        
+              </div>
+              <div class=" content">
+                <p>html,css,js,数据</p>
+
+              </div>
+            </div>
+          
+            <div class="ui segment accordion">
+              <div class=" title">
+                <i class="dropdown icon"></i>题目2 
+              </div>
+              <div class="active content">
+                <p>什么是服务器？什么是客户端？</p>
+
+              </div>
+
+              <div class=" title">
+                <i class="dropdown icon"></i>答案
+        
+              </div>
+              <div class=" content">
+                <p>服务器是安装了特殊软件的电脑，它通过这些软件给其它设备提供服务器。 客户端就是享受服务的设备。</p>
+
+              </div>
+            </div>
+          
+            <div class="ui segment accordion">
+              <div class=" title">
+                <i class="dropdown icon"></i>题目3 
+              </div>
+              <div class="active content">
+                <p>服务器对应的单词是？ 客户端对应的单词是？</p>
+
+              </div>
+
+              <div class=" title">
+                <i class="dropdown icon"></i>答案
+        
+              </div>
+              <div class=" content">
+                <p>server, client</p>
+
+              </div>
+            </div>
+          
+            <div class="ui segment accordion">
+              <div class=" title">
+                <i class="dropdown icon"></i>题目4 
+              </div>
+              <div class="active content">
+                <p>URL是什么？有使用用处？基本构成是什么？</p>
+
+              </div>
+
+              <div class=" title">
+                <i class="dropdown icon"></i>答案
+        
+              </div>
+              <div class=" content">
+                <p>Uniform Resource Locator，统一资源定位符。</p>
+<p>用于标识互联网上每个资源(css,html,js,png, avi......)的唯一存放位置。</p>
+<p>它一般由三个部分组成：通信协议,服务器名称,服务器上的具体位置。</p>
+
+              </div>
+            </div>
+          
+            <div class="ui segment accordion">
+              <div class=" title">
+                <i class="dropdown icon"></i>题目5 
+              </div>
+              <div class="active content">
+                <p>浏览器通过url请求服务器时，一般有两种请求的方式。</p>
+<p>(1)请求通常用于获取服务器资源。(2)请求通常用于向服务器提交数据。</p>
+
+              </div>
+
+              <div class=" title">
+                <i class="dropdown icon"></i>答案
+        
+              </div>
+              <div class=" content">
+                <p>(1) get (2) post</p>
+
+              </div>
+            </div>
+          
+            <div class="ui segment accordion">
+              <div class=" title">
+                <i class="dropdown icon"></i>题目6 
+              </div>
+              <div class="active content">
+                <p>判断: 接口的表现形式就是一个url地址</p>
+
+              </div>
+
+              <div class=" title">
+                <i class="dropdown icon"></i>答案
+        
+              </div>
+              <div class=" content">
+                <p>正常</p>
+
+              </div>
+            </div>
+          
+            <div class="ui segment accordion">
+              <div class=" title">
+                <i class="dropdown icon"></i>题目7 
+              </div>
+              <div class="active content">
+                <p>判断: 接口一般是由前端程序员写的一段代码，被放在服务器上。</p>
+
+              </div>
+
+              <div class=" title">
+                <i class="dropdown icon"></i>答案
+        
+              </div>
+              <div class=" content">
+                <p>错误。前端写接口了，那后端做什么？</p>
+
+              </div>
+            </div>
+          
+            <div class="ui segment accordion">
+              <div class=" title">
+                <i class="dropdown icon"></i>题目8 
+              </div>
+              <div class="active content">
+                <p>判断:前端程序员可以决定是用get方式还是post方式去调用一个接口。</p>
+
+              </div>
+
+              <div class=" title">
+                <i class="dropdown icon"></i>答案
+        
+              </div>
+              <div class=" content">
+                <p>错误。接口的调用方式是由写接口的人决定的。</p>
+
+              </div>
+            </div>
+          
+            <div class="ui segment accordion">
+              <div class=" title">
+                <i class="dropdown icon"></i>题目9 
+              </div>
+              <div class="active content">
+                <p>判断:前后端程序员的分工一般是后端写接口，前端调用接口。</p>
+
+              </div>
+
+              <div class=" title">
+                <i class="dropdown icon"></i>答案
+        
+              </div>
+              <div class=" content">
+                <p>正确。</p>
+
+              </div>
+            </div>
+          
+            <div class="ui segment accordion">
+              <div class=" title">
+                <i class="dropdown icon"></i>题目10 
+              </div>
+              <div class="active content">
+                <p>请写出$.ajax()的调用格式，并说明每个参数的含义。</p>
+
+              </div>
+
+              <div class=" title">
+                <i class="dropdown icon"></i>答案
+        
+              </div>
+              <div class=" content">
+                <pre><code>$.ajax(
+  {
+	 url,   // 请求接口地址
+     type,  // 请求的类型
+     data,  // 携带的数据
+     success: function (result) {
+     //回调函数。当请求成功之后会自动调用这个函数，它的第一个参数是服务器端返回的数据。
+     	console.log(result)
+  	 }
+  }
+)
+</code></pre>
+
+              </div>
+            </div>
+          
+            <div class="ui segment accordion">
+              <div class=" title">
+                <i class="dropdown icon"></i>题目11 
+              </div>
+              <div class="active content">
+                <p>判断：前端同学在调用接口时可以向这个接口传递任何多个参数</p>
+
+              </div>
+
+              <div class=" title">
+                <i class="dropdown icon"></i>答案
+        
+              </div>
+              <div class=" content">
+                <p>错误。接口的参数个数是由写接口的人决定的</p>
+
+              </div>
+            </div>
+          
+            <div class="ui segment accordion">
+              <div class=" title">
+                <i class="dropdown icon"></i>题目12 
+              </div>
+              <div class="active content">
+                <p>局部更新是什么意思？</p>
+
+              </div>
+
+              <div class=" title">
+                <i class="dropdown icon"></i>答案
+        
+              </div>
+              <div class=" content">
+                <p>只更新页面中的一小部分。相对于全局更新（按下F5是全部更新）来说，局部更新不再需要加载全部的资源。</p>
+
+              </div>
+            </div>
+          
+            <div class="ui segment accordion">
+              <div class=" title">
+                <i class="dropdown icon"></i>题目13 
+              </div>
+              <div class="active content">
+                <p>请求和响应对应的单词分别是？</p>
+
+              </div>
+
+              <div class=" title">
+                <i class="dropdown icon"></i>答案
+        
+              </div>
+              <div class=" content">
+                <p>request, response</p>
+
+              </div>
+            </div>
+          
+            <div class="ui segment accordion">
+              <div class=" title">
+                <i class="dropdown icon"></i>题目14 
+              </div>
+              <div class="active content">
+                <p>如何观察ajax的从接口处获取的数据</p>
+
+              </div>
+
+              <div class=" title">
+                <i class="dropdown icon"></i>答案
+        
+              </div>
+              <div class=" content">
+                <p>在network面板中查看。</p>
+
+              </div>
+            </div>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="../static/js/baidu.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.17.1/build/highlight.min.js"></script>
+  <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdn.bootcss.com/semantic-ui/2.4.1/semantic.min.js"></script>
+  <script src="https://cdn.bootcss.com/semantic-ui/2.4.1/components/accordion.js"></script>
+  <script>
+          $('.ui.accordion')
+  .accordion()
+;
+  </script>
+
+  </body>
+</html>
