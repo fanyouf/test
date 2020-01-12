@@ -310,6 +310,36 @@
               </div>
             </div>
           
+            <div class="ui segment accordion">
+              <div class=" title">
+                <i class="dropdown icon"></i>题目15 
+              </div>
+              <div class="active content">
+                <p>观看如下代码：</p>
+<pre><code class="language-javascript">$.ajax({
+   url: 'https://api.com/getinfo',   // 请求接口地址
+   type: 'get',  // 请求的类型
+   success: function (res) {
+	 if(res.status === 200) {
+         console.log(res.data)
+     }       
+   }
+})
+</code></pre>
+<p>请回答：上面的代码中的200是什么？ 可以改成其它的数值吗？</p>
+
+              </div>
+
+              <div class=" title">
+                <i class="dropdown icon"></i>答案
+        
+              </div>
+              <div class=" content">
+                <p>res表示一个对象，它是后端接口返回的数据。其中有一个属性名是status，它的值表示这个接口的工作状态。一般前后端同学会约定200表示本次接口工作正常，注意这个值是由后端同学定的，也可能是其它的数值。</p>
+
+              </div>
+            </div>
+          
         </div>
       </div>
     </div>
