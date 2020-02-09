@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>14_node_测试.md练习题</title>
+  <link href="https://cdn.bootcss.com/semantic-ui/2.4.1/semantic.min.css" rel="stylesheet" />
+  <link href="https://cdn.bootcss.com/github-markdown-css/3.0.1/github-markdown.css" rel="stylesheet">
+  <link href="https://fanyoufu.github.io/code/util.css?a=2" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.17.1/build/styles/default.min.css">
+  <style>
+    body {
+      color: #123;
+      background-color: #f3f5f6;
+    }
+  </style>
+</head>
+
+<body class="test">
+  <div class="ui grid page">
+    <div class="column">
+      <div class="ui segment _p3">
+        <h2 class="ui header dividing">
+          <div class="content">
+            14_node_测试.md-检测题
+          </div>
+        </h2>
+        <div class="ui relaxed list link">
+
+          
+            <div class="ui segment accordion">
+              <div class=" title">
+                <i class="dropdown icon"></i>题目1 
+              </div>
+              <div class="active content">
+                <p>nodejs是什么？</p>
+
+              </div>
+
+              <div class=" title">
+                <i class="dropdown icon"></i>答案
+        
+              </div>
+              <div class=" content">
+                <p>基于chrome v8引擎的javascript运行时。它是一个软件，下载安装后可以运行js代码。</p>
+
+              </div>
+            </div>
+          
+            <div class="ui segment accordion">
+              <div class=" title">
+                <i class="dropdown icon"></i>题目2 
+              </div>
+              <div class="active content">
+                <p>在nodejs下，如何执行js代码？</p>
+
+              </div>
+
+              <div class=" title">
+                <i class="dropdown icon"></i>答案
+        
+              </div>
+              <div class=" content">
+                <p>方法一：通过nodejs提供的REP环境，可以执行简单的js代码；方法二：<code>node js文件路径</code> 运行js代码。</p>
+
+              </div>
+            </div>
+          
+            <div class="ui segment accordion">
+              <div class=" title">
+                <i class="dropdown icon"></i>题目3 
+              </div>
+              <div class="active content">
+                <p>nodejs和浏览器有何相似之处？</p>
+
+              </div>
+
+              <div class=" title">
+                <i class="dropdown icon"></i>答案
+        
+              </div>
+              <div class=" content">
+                <p>它们都可以运行js代码。</p>
+
+              </div>
+            </div>
+          
+            <div class="ui segment accordion">
+              <div class=" title">
+                <i class="dropdown icon"></i>题目4 
+              </div>
+              <div class="active content">
+                <p>nodejs和javascript有什么关系？</p>
+
+              </div>
+
+              <div class=" title">
+                <i class="dropdown icon"></i>答案
+        
+              </div>
+              <div class=" content">
+                <p>nodejs是基于chrome V8引擎的js运行时，它可以运行ECMAscript代码。javascript由三个部分组成:dom,bom,ECMAScript。在不太严格的语境下，我们可以说在nodejs环境下运行js代码 。</p>
+
+              </div>
+            </div>
+          
+            <div class="ui segment accordion">
+              <div class=" title">
+                <i class="dropdown icon"></i>题目5 
+              </div>
+              <div class="active content">
+                <p>nodejs中可以使用window.alert()来弹出一个警告框吗？为什么 ？</p>
+
+              </div>
+
+              <div class=" title">
+                <i class="dropdown icon"></i>答案
+        
+              </div>
+              <div class=" content">
+                <p>不行。nodejs环境中没有window对象。</p>
+
+              </div>
+            </div>
+          
+            <div class="ui segment accordion">
+              <div class=" title">
+                <i class="dropdown icon"></i>题目6 
+              </div>
+              <div class="active content">
+                <p>如果确定本机上已经安装了nodejs</p>
+
+              </div>
+
+              <div class=" title">
+                <i class="dropdown icon"></i>答案
+        
+              </div>
+              <div class=" content">
+                <p>通过node -v查看版本号，如果能看到，则说明node已经成功安装。</p>
+
+              </div>
+            </div>
+          
+            <div class="ui segment accordion">
+              <div class=" title">
+                <i class="dropdown icon"></i>题目7 
+              </div>
+              <div class="active content">
+                <p>nodejs中的模块可以分成哪几类？</p>
+
+              </div>
+
+              <div class=" title">
+                <i class="dropdown icon"></i>答案
+        
+              </div>
+              <div class=" content">
+                <p>核心模块；自定义模块，第三方模块；</p>
+
+              </div>
+            </div>
+          
+            <div class="ui segment accordion">
+              <div class=" title">
+                <i class="dropdown icon"></i>题目8 
+              </div>
+              <div class="active content">
+                <p>使用一个核心模块的步骤是什么？</p>
+
+              </div>
+
+              <div class=" title">
+                <i class="dropdown icon"></i>答案
+        
+              </div>
+              <div class=" content">
+                <p>通过require(模块名)引入模块；查看手册，调用它的方法；</p>
+
+              </div>
+            </div>
+          
+            <div class="ui segment accordion">
+              <div class=" title">
+                <i class="dropdown icon"></i>题目9 
+              </div>
+              <div class="active content">
+                <p>fs中的同步方法和异步方法有什么区别？举例说明？</p>
+
+              </div>
+
+              <div class=" title">
+                <i class="dropdown icon"></i>答案
+        
+              </div>
+              <div class=" content">
+                <p>同步方法在名字上有sync关键字；在使用中，异步方法需要传入回调函数，而同步的方法不需要回调。</p>
+
+              </div>
+            </div>
+          
+            <div class="ui segment accordion">
+              <div class=" title">
+                <i class="dropdown icon"></i>题目10 
+              </div>
+              <div class="active content">
+                <p>使用fs读取文件和写入文件分别可以使用什么方法？</p>
+
+              </div>
+
+              <div class=" title">
+                <i class="dropdown icon"></i>答案
+        
+              </div>
+              <div class=" content">
+                <p>fs.readFile读取文件；fs.writeFile用来写入方法；</p>
+
+              </div>
+            </div>
+          
+            <div class="ui segment accordion">
+              <div class=" title">
+                <i class="dropdown icon"></i>题目11 
+              </div>
+              <div class="active content">
+                <p>__dirname和__filename有什么用处？</p>
+
+              </div>
+
+              <div class=" title">
+                <i class="dropdown icon"></i>答案
+        
+              </div>
+              <div class=" content">
+                <p>nodejs中提供了两个全局变量来获取获取绝对路径：</p>
+<ul>
+<li>__dirname：获取当前被执行的文件的文件夹所处的绝对路径</li>
+<li>__filename：获取当前被执行的文件的绝对路径</li>
+</ul>
+
+              </div>
+            </div>
+          
+            <div class="ui segment accordion">
+              <div class=" title">
+                <i class="dropdown icon"></i>题目12 
+              </div>
+              <div class="active content">
+                <p>使用fs读取文件时，为什么不推荐使用相对路径？</p>
+
+              </div>
+
+              <div class=" title">
+                <i class="dropdown icon"></i>答案
+        
+              </div>
+              <div class=" content">
+                <p>相对路径会随着执行目标js文件的位置改变而变化，所以要使用绝对路径。</p>
+
+              </div>
+            </div>
+          
+            <div class="ui segment accordion">
+              <div class=" title">
+                <i class="dropdown icon"></i>题目13 
+              </div>
+              <div class="active content">
+                <p>fs模块中的writeFile和appendFile有什么区别？</p>
+
+              </div>
+
+              <div class=" title">
+                <i class="dropdown icon"></i>答案
+        
+              </div>
+              <div class=" content">
+                <p>fs.wirteFile()会覆盖原来的文件内容；fs.appendFile()是在原文件内容后追加。</p>
+
+              </div>
+            </div>
+          
+            <div class="ui segment accordion">
+              <div class=" title">
+                <i class="dropdown icon"></i>题目14 
+              </div>
+              <div class="active content">
+                <p>请说如明如下代码中 <code>fs.readFile('./a.txt','utf8',(err,data)=&gt;{})</code> utf8,err,data的意义？</p>
+
+              </div>
+
+              <div class=" title">
+                <i class="dropdown icon"></i>答案
+        
+              </div>
+              <div class=" content">
+                <p>如果设置了utf8，则读出的文件内容是字符串格式的，否则是Buffter格式的。</p>
+<p>如果读文件的过程中出现了错误，则err有值，否则没有值；</p>
+<p>如果读文件成功，则文件的内容保存是data中。</p>
+
+              </div>
+            </div>
+          
+            <div class="ui segment accordion">
+              <div class=" title">
+                <i class="dropdown icon"></i>题目15 
+              </div>
+              <div class="active content">
+                <p>定义模块</p>
+<pre><code class="language-javascript">// yourModule.js	
+exports.a = 1;
+</code></pre>
+<p>使用模块。请问，如下代码中会输出什么结果？</p>
+<pre><code class="language-javascript">//index.js
+const yourModule = require('./yourModule');
+console.log(yourModule)
+</code></pre>
+
+              </div>
+
+              <div class=" title">
+                <i class="dropdown icon"></i>答案
+        
+              </div>
+              <div class=" content">
+                <p>{a:1}</p>
+
+              </div>
+            </div>
+          
+            <div class="ui segment accordion">
+              <div class=" title">
+                <i class="dropdown icon"></i>题目16 
+              </div>
+              <div class="active content">
+                <pre><code class="language-javascript">// yourModule.js	
+exports = {a : 1 };
+</code></pre>
+<p>使用模块。请问，如下代码中会输出什么结果？</p>
+<pre><code class="language-javascript">//index.js
+const yourModule = require('./yourModule');
+console.log(yourModule)
+</code></pre>
+
+              </div>
+
+              <div class=" title">
+                <i class="dropdown icon"></i>答案
+        
+              </div>
+              <div class=" content">
+                <p>{a:1}</p>
+
+              </div>
+            </div>
+          
+            <div class="ui segment accordion">
+              <div class=" title">
+                <i class="dropdown icon"></i>题目17 
+              </div>
+              <div class="active content">
+                <pre><code class="language-javascript">// yourModule.js	
+exports.a = 1;
+module.exports.b = 2
+</code></pre>
+<p>使用模块。请问，如下代码中会输出什么结果？</p>
+<pre><code class="language-javascript">//index.js
+const yourModule = require('./yourModule');
+console.log(yourModule)
+</code></pre>
+
+              </div>
+
+              <div class=" title">
+                <i class="dropdown icon"></i>答案
+        
+              </div>
+              <div class=" content">
+                <p>{a:1,b:2}</p>
+
+              </div>
+            </div>
+          
+            <div class="ui segment accordion">
+              <div class=" title">
+                <i class="dropdown icon"></i>题目18 
+              </div>
+              <div class="active content">
+                <pre><code class="language-javascript">// yourModule.js	
+exports = {a:1}
+module.exports = {b:2}
+</code></pre>
+<p>使用模块。请问，如下代码中会输出什么结果？</p>
+<pre><code class="language-javascript">//index.js
+const yourModule = require('./yourModule');
+console.log(yourModule)
+</code></pre>
+
+              </div>
+
+              <div class=" title">
+                <i class="dropdown icon"></i>答案
+        
+              </div>
+              <div class=" content">
+                <p>{b:2}</p>
+
+              </div>
+            </div>
+          
+            <div class="ui segment accordion">
+              <div class=" title">
+                <i class="dropdown icon"></i>题目19 
+              </div>
+              <div class="active content">
+                <pre><code class="language-javascript">// yourModule.js	
+exports = {a:1}
+module.exports = 2
+</code></pre>
+<p>使用模块。请问，如下代码中会输出什么结果？</p>
+<pre><code class="language-javascript">//index.js
+const yourModule = require('./yourModule');
+console.log(yourModule)
+</code></pre>
+
+              </div>
+
+              <div class=" title">
+                <i class="dropdown icon"></i>答案
+        
+              </div>
+              <div class=" content">
+                <p>2</p>
+
+              </div>
+            </div>
+          
+            <div class="ui segment accordion">
+              <div class=" title">
+                <i class="dropdown icon"></i>题目20 
+              </div>
+              <div class="active content">
+                <pre><code class="language-javascript">// yourModule.js	
+exports = 1
+</code></pre>
+<p>使用模块。请问，如下代码中会输出什么结果？</p>
+<pre><code class="language-javascript">//index.js
+const yourModule = require('./yourModule');
+console.log(yourModule)
+</code></pre>
+
+              </div>
+
+              <div class=" title">
+                <i class="dropdown icon"></i>答案
+        
+              </div>
+              <div class=" content">
+                <p>1</p>
+
+              </div>
+            </div>
+          
+            <div class="ui segment accordion">
+              <div class=" title">
+                <i class="dropdown icon"></i>题目21 
+              </div>
+              <div class="active content">
+                <pre><code class="language-javascript">// yourModule.js	
+// 一句代码也没有
+</code></pre>
+<p>使用模块。请问，如下代码中会输出什么结果？</p>
+<pre><code class="language-javascript">//index.js
+const yourModule = require('./yourModule');
+console.log(yourModule)
+</code></pre>
+
+              </div>
+
+              <div class=" title">
+                <i class="dropdown icon"></i>答案
+        
+              </div>
+              <div class=" content">
+                <p>{}</p>
+
+              </div>
+            </div>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="../static/js/baidu.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.17.1/build/highlight.min.js"></script>
+  <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdn.bootcss.com/semantic-ui/2.4.1/semantic.min.js"></script>
+  <script src="https://cdn.bootcss.com/semantic-ui/2.4.1/components/accordion.js"></script>
+  <script>
+          $('.ui.accordion')
+  .accordion()
+;
+  </script>
+
+  </body>
+</html>
