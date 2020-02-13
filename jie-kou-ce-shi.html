@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>17_接口_测试.md练习题</title>
+  <link href="https://cdn.bootcss.com/semantic-ui/2.4.1/semantic.min.css" rel="stylesheet" />
+  <link href="https://cdn.bootcss.com/github-markdown-css/3.0.1/github-markdown.css" rel="stylesheet">
+  <link href="https://fanyoufu.github.io/code/util.css?a=2" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.17.1/build/styles/default.min.css">
+  <style>
+    body {
+      color: #123;
+      background-color: #f3f5f6;
+    }
+  </style>
+</head>
+
+<body class="test">
+  <div class="ui grid page">
+    <div class="column">
+      <div class="ui segment _p3">
+        <h2 class="ui header dividing">
+          <div class="content">
+            17_接口_测试.md-检测题
+          </div>
+        </h2>
+        <div class="ui relaxed list link">
+
+          
+            <div class="ui segment accordion">
+              <div class=" title">
+                <i class="dropdown icon"></i>题目1 
+              </div>
+              <div class="active content">
+                <p>接口与静态资源有相同和不同的地方。</p>
+
+              </div>
+
+              <div class=" title">
+                <i class="dropdown icon"></i>答案
+        
+              </div>
+              <div class=" content">
+                <p>相同点：都需要通过url地址来访问，都表示服务器上的资源。</p>
+<p>不两点：服务器会读出静态资源的内容返回给客户端；服务器会执行接口对应的代码来返回结果给客户端。</p>
+
+              </div>
+            </div>
+          
+            <div class="ui segment accordion">
+              <div class=" title">
+                <i class="dropdown icon"></i>题目2 
+              </div>
+              <div class="active content">
+                <p>如果要实现一个get类型的，名为test的测试接口，下面的代码有什么不对的地方？</p>
+<pre><code class="language-javascript">http.createServer((req,res)=&gt; {
+    if(req.url==='test' &amp;&amp; req.method==='get') {
+        res.end('ok')
+    } else {
+        res.end('404')
+    }    
+})
+</code></pre>
+
+              </div>
+
+              <div class=" title">
+                <i class="dropdown icon"></i>答案
+        
+              </div>
+              <div class=" content">
+                <p>if中的条件应该改成<code>if(req.url==='/test' &amp;&amp; req.method==='GET')</code></p>
+
+              </div>
+            </div>
+          
+            <div class="ui segment accordion">
+              <div class=" title">
+                <i class="dropdown icon"></i>题目3 
+              </div>
+              <div class="active content">
+                <p>如何实现一个名为abc的get类型接口，让它以json格式返回所传入的参数。</p>
+<pre><code class="language-javascript">http.createServer((req,res)=&gt; {
+    if( __ req.method==='get') {
+        // 补全代码
+    } else {
+        res.end('404')
+    }   
+})
+</code></pre>
+
+              </div>
+
+              <div class=" title">
+                <i class="dropdown icon"></i>答案
+        
+              </div>
+              <div class=" content">
+                <pre><code class="language-javascript">http.createServer((req,res)=&gt; {
+    var obj = url.parse(req.url,true)
+    if(obj.pathname===&quot;/abc&quot; &amp;&amp; req.method==='GET') {
+		res.setHeader(&quot;content-type&quot;,&quot;application/json;charset=utf-8&quot;)
+        res.end(JSON.stringfy(obj.query))
+    } else {
+        res.end('404')
+    }   
+})
+</code></pre>
+
+              </div>
+            </div>
+          
+            <div class="ui segment accordion">
+              <div class=" title">
+                <i class="dropdown icon"></i>题目4 
+              </div>
+              <div class="active content">
+                <p>post方式传参与get方式传参的区别？</p>
+
+              </div>
+
+              <div class=" title">
+                <i class="dropdown icon"></i>答案
+        
+              </div>
+              <div class=" content">
+                <p>get方式只能通过在请求行中以查询字符串的格式传递，由于url地址的长度不可能无限长，所以get方式传参的长度有限。post方式传递的参数在请求体中，所以没有大小的限制。</p>
+
+              </div>
+            </div>
+          
+            <div class="ui segment accordion">
+              <div class=" title">
+                <i class="dropdown icon"></i>题目5 
+              </div>
+              <div class="active content">
+                <p>如何获取post方式传递的参数？</p>
+
+              </div>
+
+              <div class=" title">
+                <i class="dropdown icon"></i>答案
+        
+              </div>
+              <div class=" content">
+                <p>给req对象监听data,end事件。在data事件中收集当前传递的一段数据，并统一收集起来；在end事件中解析数据，还原成对象格式。</p>
+
+              </div>
+            </div>
+          
+            <div class="ui segment accordion">
+              <div class=" title">
+                <i class="dropdown icon"></i>题目6 
+              </div>
+              <div class="active content">
+                <p>如何实现一个名为abc的post类型接口，让它以json格式返回所传入的参数。</p>
+<pre><code class="language-javascript">http.createServer((req,res)=&gt; {
+    if( __ req.method==='POST') {
+        // 补全代码
+    } else {
+        res.end('404')
+    }   
+})
+</code></pre>
+
+              </div>
+
+              <div class=" title">
+                <i class="dropdown icon"></i>答案
+        
+              </div>
+              <div class=" content">
+                <pre><code class="language-javascript">const qs = require(&quot;querystring&quot;)
+http.createServer((req,res)=&gt; {
+    if( req.pathname===&quot;/abc&quot; &amp;&amp; req.method==='POST') {
+        let bodyStr =&quot;&quot;
+        req.on(&quot;data&quot;,buf =&gt; bodyStr+=buf)
+        req.on(&quot;end&quot;,()=&gt;{
+            let obj = qs.parse(bodyStr)
+            // 注意res.end()的位置是在回调函数中
+            res.setHeader(&quot;content-type&quot;,&quot;application/json;charset=utf-8&quot;)
+            res.end(JSON.stringify(obj))
+        })
+    } else {
+        res.end('404')
+    }   
+})
+</code></pre>
+
+              </div>
+            </div>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="../static/js/baidu.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.17.1/build/highlight.min.js"></script>
+  <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdn.bootcss.com/semantic-ui/2.4.1/semantic.min.js"></script>
+  <script src="https://cdn.bootcss.com/semantic-ui/2.4.1/components/accordion.js"></script>
+  <script>
+          $('.ui.accordion')
+  .accordion()
+;
+  </script>
+
+  </body>
+</html>
