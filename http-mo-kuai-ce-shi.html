@@ -337,7 +337,7 @@ res.end(JSON.stringify( result) )
                 <i class="dropdown icon"></i>题目13 
               </div>
               <div class="active content">
-                <p>计算机网络的三要素是什么？</p>
+                <p>接口与静态资源有相同和不同的地方。</p>
 
               </div>
 
@@ -346,7 +346,8 @@ res.end(JSON.stringify( result) )
         
               </div>
               <div class=" content">
-                <p>协议，ip，端口。</p>
+                <p>相同点：都需要通过url地址来访问，都表示服务器上的资源。</p>
+<p>不两点：服务器会读出静态资源的内容返回给客户端；服务器会执行接口对应的代码来返回结果给客户端。</p>
 
               </div>
             </div>
@@ -356,7 +357,15 @@ res.end(JSON.stringify( result) )
                 <i class="dropdown icon"></i>题目14 
               </div>
               <div class="active content">
-                <p>ip和端口有什么作用？</p>
+                <p>如果要实现一个get类型的，名为test的测试接口，下面的代码有什么不对的地方？</p>
+<pre><code class="language-javascript">http.createServer((req,res)=&gt; {
+    if(req.url==='test' &amp;&amp; req.method==='get') {
+        res.end('ok')
+    } else {
+        res.end('404')
+    }    
+})
+</code></pre>
 
               </div>
 
@@ -365,12 +374,161 @@ res.end(JSON.stringify( result) )
         
               </div>
               <div class=" content">
-                <p>ip地址用来确定服务器的地址。端口号来确定服务的软件。</p>
-<p>IP地址其实就是一串数字，如:172.28.19.88，互联网中的每台计算机都有自己的IP地址，IP地址类似于我们邮快递时填写的地址，如： XXX省XX市XX区XX大街XX号。</p>
-<p>网络中路由器都可以读懂这个由数字组成的“地址”，从而找到对应的计算机，把信息给到计算机，在计算机中，有个专门负责接收和发送网络数据的“管家”，它就是网卡设备，所有信息发送和接收都通过这位“管家”来进行。</p>
-<p>在实际应用当中还有个问题，我们电脑中同时运行着浏览器、QQ、微信等多个应用程序，当计算机通过网卡接收到了数据，但这些数据都是要给谁的呢，QQ？微信？还是浏览器？</p>
-<p>怎么正确识别收到的数据属于哪个应用程序呢，为了解决这个问题，计算机在每个发送的数据中附加了个标识，这个标识就是端口号，通过端口号计算机就可以知道接收的数据给哪个程序，端口号也是个数字，范围是从0-65535。</p>
-<p>常用的端口：FTP服务 : 21，http服务 :80，https服务 :443</p>
+                <p>if中的条件应该改成<code>if(req.url==='/test' &amp;&amp; req.method==='GET')</code></p>
+
+              </div>
+            </div>
+          
+            <div class="ui segment accordion">
+              <div class=" title">
+                <i class="dropdown icon"></i>题目15 
+              </div>
+              <div class="active content">
+                <p>如何实现一个名为abc的get类型接口，让它以json格式返回所传入的参数。</p>
+<pre><code class="language-javascript">http.createServer((req,res)=&gt; {
+    if( __ req.method==='get') {
+        // 补全代码
+    } else {
+        res.end('404')
+    }   
+})
+</code></pre>
+
+              </div>
+
+              <div class=" title">
+                <i class="dropdown icon"></i>答案
+        
+              </div>
+              <div class=" content">
+                <pre><code class="language-javascript">http.createServer((req,res)=&gt; {
+    var obj = url.parse(req.url,true)
+    if(obj.pathname===&quot;/abc&quot; &amp;&amp; req.method==='GET') {
+		res.setHeader(&quot;content-type&quot;,&quot;application/json;charset=utf-8&quot;)
+        res.end(JSON.stringfy(obj.query))
+    } else {
+        res.end('404')
+    }   
+})
+</code></pre>
+
+              </div>
+            </div>
+          
+            <div class="ui segment accordion">
+              <div class=" title">
+                <i class="dropdown icon"></i>题目16 
+              </div>
+              <div class="active content">
+                <p>post方式传参与get方式传参的区别？</p>
+
+              </div>
+
+              <div class=" title">
+                <i class="dropdown icon"></i>答案
+        
+              </div>
+              <div class=" content">
+                <p>get方式只能通过在请求行中以查询字符串的格式传递，由于url地址的长度不可能无限长，所以get方式传参的长度有限。post方式传递的参数在请求体中，所以没有大小的限制。</p>
+
+              </div>
+            </div>
+          
+            <div class="ui segment accordion">
+              <div class=" title">
+                <i class="dropdown icon"></i>题目17 
+              </div>
+              <div class="active content">
+                <p>如何获取post方式传递的参数？</p>
+
+              </div>
+
+              <div class=" title">
+                <i class="dropdown icon"></i>答案
+        
+              </div>
+              <div class=" content">
+                <p>给req对象监听data,end事件。在data事件中收集当前传递的一段数据，并统一收集起来；在end事件中解析数据，还原成对象格式。</p>
+
+              </div>
+            </div>
+          
+            <div class="ui segment accordion">
+              <div class=" title">
+                <i class="dropdown icon"></i>题目18 
+              </div>
+              <div class="active content">
+                <p>如何实现一个名为abc的post类型接口，让它以json格式返回所传入的参数。</p>
+<pre><code class="language-javascript">http.createServer((req,res)=&gt; {
+    if( __ req.method==='POST') {
+        // 补全代码
+    } else {
+        res.end('404')
+    }   
+})
+</code></pre>
+
+              </div>
+
+              <div class=" title">
+                <i class="dropdown icon"></i>答案
+        
+              </div>
+              <div class=" content">
+                <pre><code class="language-javascript">const qs = require(&quot;querystring&quot;)
+http.createServer((req,res)=&gt; {
+    if( req.pathname===&quot;/abc&quot; &amp;&amp; req.method==='POST') {
+        let bodyStr =&quot;&quot;
+        req.on(&quot;data&quot;,buf =&gt; bodyStr+=buf)
+        req.on(&quot;end&quot;,()=&gt;{
+            let obj = qs.parse(bodyStr)
+            // 注意res.end()的位置是在回调函数中
+            res.setHeader(&quot;content-type&quot;,&quot;application/json;charset=utf-8&quot;)
+            res.end(JSON.stringify(obj))
+        })
+    } else {
+        res.end('404')
+    }   
+})
+</code></pre>
+
+              </div>
+            </div>
+          
+            <div class="ui segment accordion">
+              <div class=" title">
+                <i class="dropdown icon"></i>题目19 
+              </div>
+              <div class="active content">
+                <p>下面的代码是用来实现一个名为abc的post类型接口，让它以json格式返回所传入的参数。</p>
+<pre><code class="language-javascript">const qs = require(&quot;querystring&quot;)
+http.createServer((req,res)=&gt; {
+    if( req.pathname===&quot;/abc&quot; &amp;&amp; req.method==='post') {
+        let bodyStr =&quot;&quot;
+        res.on(&quot;data&quot;,buf =&gt; bodyStr+=buf)
+        res.on(&quot;end&quot;,()=&gt;{
+            let obj = qs.parse(bodyStr)
+            res.setHeader(&quot;content-type&quot;,&quot;application/json;charset=utf-8&quot;)
+            res.end(JSON.stringify(obj))
+        })
+    } else {
+        res.end('404')
+    }
+})
+</code></pre>
+<p>请指出上面代码中可能存在的错误。</p>
+
+              </div>
+
+              <div class=" title">
+                <i class="dropdown icon"></i>答案
+        
+              </div>
+              <div class=" content">
+                <ol>
+<li>req.method === <code>post</code> 。这里的post应该是大写。</li>
+<li>res.on应该是req.on</li>
+</ol>
 
               </div>
             </div>

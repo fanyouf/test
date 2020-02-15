@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>19_express_测试.md练习题</title>
+  <link href="https://cdn.bootcss.com/semantic-ui/2.4.1/semantic.min.css" rel="stylesheet" />
+  <link href="https://cdn.bootcss.com/github-markdown-css/3.0.1/github-markdown.css" rel="stylesheet">
+  <link href="https://fanyoufu.github.io/code/util.css?a=2" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.17.1/build/styles/default.min.css">
+  <style>
+    body {
+      color: #123;
+      background-color: #f3f5f6;
+    }
+  </style>
+</head>
+
+<body class="test">
+  <div class="ui grid page">
+    <div class="column">
+      <div class="ui segment _p3">
+        <h2 class="ui header dividing">
+          <div class="content">
+            19_express_测试.md-检测题
+          </div>
+        </h2>
+        <div class="ui relaxed list link">
+
+          
+            <div class="ui segment accordion">
+              <div class=" title">
+                <i class="dropdown icon"></i>题目1 
+              </div>
+              <div class="active content">
+                <p>新建一空目录，如abc。然后进入abc目录下，在cmd窗口中使用如下两句命令</p>
+<pre><code class="language-bash">npm init --yes
+npm install
+</code></pre>
+<p>问：它会创建node_modules目录吗？为什么</p>
+
+              </div>
+
+              <div class=" title">
+                <i class="dropdown icon"></i>答案
+        
+              </div>
+              <div class=" content">
+                <p>不会。</p>
+<p>原因是<code>npm init --yes</code> 只会创建一个初始的package.json文件，在它其中并不包含任何<code>dependencies</code>项。</p>
+<p>npm install 命令会搜索当前目录下的package.json中的<code>dependencies</code>项，并安装依赖，从而创建node_modules目录。由于缺少<code>dependencies</code>项，所以不会创建node_modules目录。</p>
+
+              </div>
+            </div>
+          
+            <div class="ui segment accordion">
+              <div class=" title">
+                <i class="dropdown icon"></i>题目2 
+              </div>
+              <div class="active content">
+                <p>一次向服务器发的请求有几个传参的地方？</p>
+
+              </div>
+
+              <div class=" title">
+                <i class="dropdown icon"></i>答案
+        
+              </div>
+              <div class=" content">
+                <p>请求行，请求体；</p>
+
+              </div>
+            </div>
+          
+            <div class="ui segment accordion">
+              <div class=" title">
+                <i class="dropdown icon"></i>题目3 
+              </div>
+              <div class="active content">
+                <p>判断：get类型的请求只能在请求行中传参，所以它没有请求体。</p>
+
+              </div>
+
+              <div class=" title">
+                <i class="dropdown icon"></i>答案
+        
+              </div>
+              <div class=" content">
+                <p>正确。</p>
+
+              </div>
+            </div>
+          
+            <div class="ui segment accordion">
+              <div class=" title">
+                <i class="dropdown icon"></i>题目4 
+              </div>
+              <div class="active content">
+                <p>判断：express框架是基于nodejs的，所以要想运行它，必须要先安装nodejs。</p>
+
+              </div>
+
+              <div class=" title">
+                <i class="dropdown icon"></i>答案
+        
+              </div>
+              <div class=" content">
+                <p>正确。</p>
+
+              </div>
+            </div>
+          
+            <div class="ui segment accordion">
+              <div class=" title">
+                <i class="dropdown icon"></i>题目5 
+              </div>
+              <div class="active content">
+                <p>判断：express包是npm上的第三方模块，通过npm install express命令只会下载它这一个模块。</p>
+
+              </div>
+
+              <div class=" title">
+                <i class="dropdown icon"></i>答案
+        
+              </div>
+              <div class=" content">
+                <p>错误。npm install 在下载包时，会把包的依赖，依赖的依赖 ..... 全下载下来。express这个包比较复杂，它依赖的包也非常多，所以不会只下载这一个模块。</p>
+
+              </div>
+            </div>
+          
+            <div class="ui segment accordion">
+              <div class=" title">
+                <i class="dropdown icon"></i>题目6 
+              </div>
+              <div class="active content">
+                <p>express中静态资源托管是什么意思？</p>
+
+              </div>
+
+              <div class=" title">
+                <i class="dropdown icon"></i>答案
+        
+              </div>
+              <div class=" content">
+                <p>静态资源托管是就让用户可以直接访问某个目录下的全部静态文件（.html , .css, .js, .png...）。</p>
+
+              </div>
+            </div>
+          
+            <div class="ui segment accordion">
+              <div class=" title">
+                <i class="dropdown icon"></i>题目7 
+              </div>
+              <div class="active content">
+                <p>express中如何实现静态资源托管？</p>
+
+              </div>
+
+              <div class=" title">
+                <i class="dropdown icon"></i>答案
+        
+              </div>
+              <div class=" content">
+                <p>无前缀的<code>app.use(express.static('目录名'))</code></p>
+<p>有前缀的<code>app.use('/abc',express.static('目录名'))</code></p>
+
+              </div>
+            </div>
+          
+            <div class="ui segment accordion">
+              <div class=" title">
+                <i class="dropdown icon"></i>题目8 
+              </div>
+              <div class="active content">
+                <p>express中如何快速获取请求行中的参数？</p>
+
+              </div>
+
+              <div class=" title">
+                <i class="dropdown icon"></i>答案
+        
+              </div>
+              <div class=" content">
+                <p>req.query。</p>
+
+              </div>
+            </div>
+          
+            <div class="ui segment accordion">
+              <div class=" title">
+                <i class="dropdown icon"></i>题目9 
+              </div>
+              <div class="active content">
+                <p>express中如何快速获取请求体中的参数？</p>
+
+              </div>
+
+              <div class=" title">
+                <i class="dropdown icon"></i>答案
+        
+              </div>
+              <div class=" content">
+                <p>请求体的参数要正确的解析出来，还要依据本次请求中的content-type的值来确定。一般有三种情况：</p>
+<ul>
+<li>
+<p>application/x-www-form-urlencoded。使用bodyParser包。</p>
+</li>
+<li>
+<p>application/json 。 使用bodyParser包。</p>
+</li>
+<li>
+<p>multipart/form-data  。使用multer包。</p>
+</li>
+</ul>
+
+              </div>
+            </div>
+          
+            <div class="ui segment accordion">
+              <div class=" title">
+                <i class="dropdown icon"></i>题目10 
+              </div>
+              <div class="active content">
+                <p>判断：在jquery库中。$.post()方法默认会把本次请求的content-type设置为<code>application/json</code></p>
+
+              </div>
+
+              <div class=" title">
+                <i class="dropdown icon"></i>答案
+        
+              </div>
+              <div class=" content">
+                <p>错误。答案是<code>application/x-www-form-urlencoded</code></p>
+
+              </div>
+            </div>
+          
+            <div class="ui segment accordion">
+              <div class=" title">
+                <i class="dropdown icon"></i>题目11 
+              </div>
+              <div class="active content">
+                <p>写一个后端接口，名字是adduser，用来接收formdata格式的数据，前端传递的参数有三个：name表示用户名，pwd表示用户密码，avatar表示用户的头像文件。如果能够成功收到这三个参数就返回ok，否就返回错误。</p>
+<p>写一个前端测试代码，来测试上面的接口是否正常。</p>
+
+              </div>
+
+              <div class=" title">
+                <i class="dropdown icon"></i>答案
+        
+              </div>
+              <div class=" content">
+                <p>后端接口：</p>
+<pre><code class="language-javascript">const express = require('express')
+
+const multer = require('multer')
+//  配置
+const upload = multer({dest:'avatars/'}) 
+
+const app = express()
+
+app.post('/adduser',upload.single(&quot;avatar&quot;),(req,res)=&gt;{
+    // console.log(req.file)
+    // console.log(req.body)
+    let {name, pwd} = req.body;
+    let avatarUrl = req.file.path;
+
+    res.send({
+        code: 200,
+        msg: &quot;ok&quot;
+    })
+})
+app.listen(8084,()=&gt;{
+    console.log(&quot;服务器启动了 8084&quot;);
+    
+})
+
+</code></pre>
+<p>前端测试</p>
+<pre><code class="language-javascript">var fd = new FormData();
+// 追加三个参数
+fd.append(&quot;name&quot;,name);
+fd.append(&quot;pwd&quot;,pwd)
+fd.append(&quot;avatar&quot;, avatar)
+
+$.ajax({
+    url: 'http://localhost:8084/user_add',
+    type:&quot;post&quot;,
+    data: fd,
+    contentType:false,
+    processData:false
+}).then(res=&gt;{
+    console.log(res);
+})
+</code></pre>
+
+              </div>
+            </div>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="../static/js/baidu.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.17.1/build/highlight.min.js"></script>
+  <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdn.bootcss.com/semantic-ui/2.4.1/semantic.min.js"></script>
+  <script src="https://cdn.bootcss.com/semantic-ui/2.4.1/components/accordion.js"></script>
+  <script>
+          $('.ui.accordion')
+  .accordion()
+;
+  </script>
+
+  </body>
+</html>
