@@ -296,6 +296,30 @@ console.log(obj.a, obj.b) // a,b的值分别是什么？
               </div>
             </div>
           
+            <div class="ui segment accordion">
+              <div class=" title">
+                <i class="dropdown icon"></i>题目11 
+              </div>
+              <div class="active content">
+                <p>Object.defineProperty和Proxy的相同和不同？</p>
+
+              </div>
+
+              <div class=" title">
+                <i class="dropdown icon"></i>答案
+        
+              </div>
+              <div class=" content">
+                <p>Object.defineProperty是es5中给出的，用来精细设置对象的属性的工具：例如可以通过writeable,enumable,configurable,set,get来设置只读属性，或者对某个属性进行拦截。 在vue2.x中就是使用它实现的数据响应式效果。</p>
+<p>Proxy是es6提出新对象。它用来在一个已有对象的基础上设置代理对象。这个代理对象的作用是对原对象上的所有操作进行拦截，也可以充当拦截器的功能。</p>
+<p>不同的之处在于，proxy的代理功能更加强大：</p>
+<p>它可以很方便地拦截所有的属性操作；</p>
+<p>除了get,set之外还有其它的代理功能。</p>
+<p>在vue3中将会使用它来实现数据响应式效果。</p>
+
+              </div>
+            </div>
+          
         </div>
       </div>
     </div>
