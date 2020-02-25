@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>03_函数扩展_测试.md练习题</title>
+  <link href="https://cdn.bootcss.com/semantic-ui/2.4.1/semantic.min.css" rel="stylesheet" />
+  <link href="https://cdn.bootcss.com/github-markdown-css/3.0.1/github-markdown.css" rel="stylesheet">
+  <link href="https://fanyoufu.github.io/code/util.css?a=2" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.17.1/build/styles/default.min.css">
+  <style>
+    body {
+      color: #123;
+      background-color: #f3f5f6;
+    }
+  </style>
+</head>
+
+<body class="test">
+  <div class="ui grid page">
+    <div class="column">
+      <div class="ui segment _p3">
+        <h2 class="ui header dividing">
+          <div class="content">
+            03_函数扩展_测试.md-检测题
+          </div>
+        </h2>
+        <div class="ui relaxed list link">
+
+          
+            <div class="ui segment accordion">
+              <div class=" title">
+                <i class="dropdown icon"></i>题目1 
+              </div>
+              <div class="active content">
+                <pre><code class="language-javascript">function f(a=1,b=2){
+	console.log(a,b,a+b);
+}
+f(10)
+f(10,20)
+f()
+</code></pre>
+
+              </div>
+
+              <div class=" title">
+                <i class="dropdown icon"></i>答案
+        
+              </div>
+              <div class=" content">
+                <p>10 2 12
+10 20 30
+1 2 3</p>
+
+              </div>
+            </div>
+          
+            <div class="ui segment accordion">
+              <div class=" title">
+                <i class="dropdown icon"></i>题目2 
+              </div>
+              <div class="active content">
+                <pre><code class="language-javascript">function f2(a=1,b){
+	console.log(a,b,a+b);
+}
+f2(10)
+f2(10,20)
+f2(,3)
+f2()
+</code></pre>
+
+              </div>
+
+              <div class=" title">
+                <i class="dropdown icon"></i>答案
+        
+              </div>
+              <div class=" content">
+                <p>10 1 11
+10 20 30
+f2(,3) 报错</p>
+<p>1 undefined null</p>
+
+              </div>
+            </div>
+          
+            <div class="ui segment accordion">
+              <div class=" title">
+                <i class="dropdown icon"></i>题目3 
+              </div>
+              <div class="active content">
+                <pre><code class="language-javascript">function f1({a=1,b=2}={}){
+   console.log(a,b,a+b);
+}
+f1({a:10,b:20})
+f1({a:20})
+f1({c:1})
+f1()
+</code></pre>
+
+              </div>
+
+              <div class=" title">
+                <i class="dropdown icon"></i>答案
+        
+              </div>
+              <div class=" content">
+                <pre><code class="language-javascript">function f1({a=1,b=2}={}){
+   console.log(a,b,a+b);
+}
+f1({a:10,b:20}) // 10,20,30
+f1({a:20})// 20,2,22 先进行参数传递，即 {a=1,b=2} = {a:20}这个解构赋值过程中，a的值取20，b用默认值是2。
+f1({c:1})// 1,2,3; 先进行参数传递，即 {a=1,b=2} = {c:1}，这个解构赋值过程中，直接使用a,b的默认值。
+f1();//1,2,3; 这里没有传参，直接使用参数的默认值 {a=1,b=2} = {}，这个解构赋值过程中，直接使用a,b的默认值。
+</code></pre>
+
+              </div>
+            </div>
+          
+            <div class="ui segment accordion">
+              <div class=" title">
+                <i class="dropdown icon"></i>题目4 
+              </div>
+              <div class="active content">
+                <pre><code class="language-javascript">function f2 (x,...y){
+    console.log(x,y)
+}
+f2(1,2);
+f2(2,3,4);
+</code></pre>
+
+              </div>
+
+              <div class=" title">
+                <i class="dropdown icon"></i>答案
+        
+              </div>
+              <div class=" content">
+                <pre><code class="language-javascript">f2(1,2); // 1, [2]
+f2(2,3,4); // 2, [3,4]
+</code></pre>
+
+              </div>
+            </div>
+          
+            <div class="ui segment accordion">
+              <div class=" title">
+                <i class="dropdown icon"></i>题目5 
+              </div>
+              <div class="active content">
+                <pre><code>function f1 (x,y){
+    console.log(x,y)
+}
+f1(1,2);
+f1(2,3,4);
+</code></pre>
+
+              </div>
+
+              <div class=" title">
+                <i class="dropdown icon"></i>答案
+        
+              </div>
+              <div class=" content">
+                <pre><code>f2(1,2); // 1, 2
+f2(2,3,4); // 2, 3。多余的实参被无情地丢弃
+</code></pre>
+
+              </div>
+            </div>
+          
+            <div class="ui segment accordion">
+              <div class=" title">
+                <i class="dropdown icon"></i>题目6 
+              </div>
+              <div class="active content">
+                <p>用箭头函数对下列函数进行改写</p>
+<pre><code class="language-javascript">function f1(x){
+	console.log(x)
+}
+
+function f2(x,y){
+	return x + y
+}
+
+function f3(x,y){
+	return {a:x,b:x+y}
+}
+
+</code></pre>
+
+              </div>
+
+              <div class=" title">
+                <i class="dropdown icon"></i>答案
+        
+              </div>
+              <div class=" content">
+                <pre><code class="language-javascript">const f1 = x =&gt; console.log(x)
+
+const f2 = (x,y)=&gt;x + y
+
+const f3 = (x,y) =&gt;({a:x,b:x+y})
+</code></pre>
+
+              </div>
+            </div>
+          
+            <div class="ui segment accordion">
+              <div class=" title">
+                <i class="dropdown icon"></i>题目7 
+              </div>
+              <div class="active content">
+                <p>用箭头函数对下列代码段中的函数进行改写</p>
+<pre><code class="language-javascript">$.get('http://XXXX').then(function(res){
+	console.log(res)
+})
+
+arr.sort(function(a,b){ return b - a })
+</code></pre>
+
+              </div>
+
+              <div class=" title">
+                <i class="dropdown icon"></i>答案
+        
+              </div>
+              <div class=" content">
+                <pre><code class="language-javascript">$.get('http://XXXX').then( res=&gt; console.log(res) )
+
+arr.sort((a,b)=&gt; b - a)
+</code></pre>
+
+              </div>
+            </div>
+          
+            <div class="ui segment accordion">
+              <div class=" title">
+                <i class="dropdown icon"></i>题目8 
+              </div>
+              <div class="active content">
+                <p>写出如下代码的输出，并解释原因。</p>
+<pre><code class="language-js">var name = 'a'; 
+let obj = {
+    name: 'b',
+    f1 : () =&gt; {
+        console.log(this);
+        console.log(this.name); 
+    },
+    f2 : function(){
+        console.log(this); 
+        console.log(this.name); 
+    }
+};
+obj.f1();
+obj.f2();
+</code></pre>
+
+              </div>
+
+              <div class=" title">
+                <i class="dropdown icon"></i>答案
+        
+              </div>
+              <div class=" content">
+                <p>obj.f1() ： window, 'a '。 f1()是箭头函数，它内部的this是定义f1的所能访问到的this值。就是window。而全局变量name是由var定义的，所以它会挂在window的属性上。window.name就是'b'。</p>
+<p>obj.f2() ： obj, 'b'。 f2()是普通函数，它内部的this是指向调用这个方法的对象，即obj。</p>
+<p>obj.f2() , obj, 'b'</p>
+
+              </div>
+            </div>
+          
+            <div class="ui segment accordion">
+              <div class=" title">
+                <i class="dropdown icon"></i>题目9 
+              </div>
+              <div class="active content">
+                <p>写出如下代码的输出，并解释原因。</p>
+<pre><code class="language-javascript">var obj = {
+    f1:()=&gt;{
+        console.log(this)
+    },
+    f2:function(){
+        console.log(this)
+    },
+    f3:function(){
+       var f = ()=&gt;{ console.log(this) }
+       return f 
+    },
+    f4:function(){
+        setTimeout(function(){console.log(this)})
+    },
+    f5:function(){
+        setTimeout(()=&gt;{console.log(this)})
+    },
+    f6:()=&gt;{
+        setTimeout(()=&gt;{console.log(this)})
+    },
+    f7:()=&gt;{
+        setTimeout(function(){console.log(this)})
+    },
+}
+
+obj.f1();
+obj.f2();
+obj.f3()();
+obj.f4();
+obj.f5();
+obj.f6();
+obj.f7();
+</code></pre>
+
+              </div>
+
+              <div class=" title">
+                <i class="dropdown icon"></i>答案
+        
+              </div>
+              <div class=" content">
+                <p>写出如下代码的输出，并解释原因。</p>
+<pre><code class="language-javascript">// 这里的this是 window
+var obj = {
+    f1:()=&gt;{
+        // 箭头函数，使用外部的this
+        console.log(this); //window
+    },
+    f2:function(){
+        // 这里的this是 obj
+        console.log(this) // obj
+    },
+    f3:function(){
+       // 这里的this是 obj
+       var f = ()=&gt;{ console.log(this) } 
+       return f 
+    },
+    f4:function(){
+        // 定时器内的函数是普通函数，它的this是window
+        setTimeout(function(){console.log(this)})
+    },
+    f5:function(){
+        // 这里的this是 obj
+        // 定时器内的函数是箭头函数，它的this由外层决赛
+        setTimeout(()=&gt;{console.log(this)}) //this
+    },
+    f6:()=&gt;{
+         // 这里的this是 window
+        // 定时器内的函数是箭头函数，它的this由外层决赛
+        setTimeout(()=&gt;{console.log(this)})// window
+    },
+    f7:()=&gt;{
+        // 定时器内的函数是普通函数，它的this是window
+        setTimeout(function(){console.log(this)}) //window
+    }
+}
+
+obj.f1();
+obj.f2();
+obj.f3()(); // obj
+obj.f4();
+obj.f5();
+obj.f6();
+obj.f7();
+</code></pre>
+
+              </div>
+            </div>
+          
+            <div class="ui segment accordion">
+              <div class=" title">
+                <i class="dropdown icon"></i>题目10 
+              </div>
+              <div class="active content">
+                <p>箭头函数中的this一定是指向window的吗？如果不是，请写代码说明。</p>
+
+              </div>
+
+              <div class=" title">
+                <i class="dropdown icon"></i>答案
+        
+              </div>
+              <div class=" content">
+                <p>如下代码中的箭头函数不是指向window的。</p>
+<pre><code class="language-javascript">// 这里的this是 window
+var obj = {
+    f3:function(){
+       // 这里的this是 obj
+       var f = ()=&gt;{ console.log(this) } 
+       return f 
+    },
+    f5:function(){
+        // 这里的this是 obj
+        // 定时器内的函数是箭头函数，它的this由外层决赛
+        setTimeout(()=&gt;{console.log(this)}) //this
+    }
+}
+
+obj.f3()(); // obj
+obj.f5();// obj
+</code></pre>
+
+              </div>
+            </div>
+          
+            <div class="ui segment accordion">
+              <div class=" title">
+                <i class="dropdown icon"></i>题目11 
+              </div>
+              <div class="active content">
+                <p>下面的代码会有什么错误吗？</p>
+<pre><code class="language-javascript">f();
+const f = x=&gt;{
+  console.log(x)
+}
+</code></pre>
+
+              </div>
+
+              <div class=" title">
+                <i class="dropdown icon"></i>答案
+        
+              </div>
+              <div class=" content">
+                <p>有，会提示：Cannot access 'f' before initialization 。对于箭头函数来说，不存在像函数声明式定义的函数的一样有函数提升。上面的代码中在没有对f进行初始化之前就使用了f()，所以会报错。如果把 const f =()=&gt;{} 改成 function f(){} 的格式就不会有错误。</p>
+
+              </div>
+            </div>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="../static/js/baidu.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.17.1/build/highlight.min.js"></script>
+  <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdn.bootcss.com/semantic-ui/2.4.1/semantic.min.js"></script>
+  <script src="https://cdn.bootcss.com/semantic-ui/2.4.1/components/accordion.js"></script>
+  <script>
+          $('.ui.accordion')
+  .accordion()
+;
+  </script>
+
+  </body>
+</html>

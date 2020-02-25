@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>02_Object.defineProperty.测试.md练习题</title>
+  <link href="https://cdn.bootcss.com/semantic-ui/2.4.1/semantic.min.css" rel="stylesheet" />
+  <link href="https://cdn.bootcss.com/github-markdown-css/3.0.1/github-markdown.css" rel="stylesheet">
+  <link href="https://fanyoufu.github.io/code/util.css?a=2" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.17.1/build/styles/default.min.css">
+  <style>
+    body {
+      color: #123;
+      background-color: #f3f5f6;
+    }
+  </style>
+</head>
+
+<body class="test">
+  <div class="ui grid page">
+    <div class="column">
+      <div class="ui segment _p3">
+        <h2 class="ui header dividing">
+          <div class="content">
+            02_Object.defineProperty.测试.md-检测题
+          </div>
+        </h2>
+        <div class="ui relaxed list link">
+
+          
+            <div class="ui segment accordion">
+              <div class=" title">
+                <i class="dropdown icon"></i>题目1 
+              </div>
+              <div class="active content">
+                <p>下面代码会输出什么？</p>
+<pre><code class="language-javascript">var obj = {a:1};
+Object.defineProperty(obj,&quot;a&quot;,{
+    get(){
+        return this.a
+    }
+})
+console.log(obj.a)
+</code></pre>
+<p>友情请示： 如果在浏览器中运行上面的代码，可能会导致浏览器卡死。慎重。</p>
+
+              </div>
+
+              <div class=" title">
+                <i class="dropdown icon"></i>答案
+        
+              </div>
+              <div class=" content">
+                <p>会陷入死循环。因为是上面的Object.definedProperty()给obj对象的a属性添加一个拦截器get()，当访问obj.a时，会执行get()中的代码，而在get()中又再次访问obj.a（this.a也就是obj.a），所以这里会形成死循环。</p>
+
+              </div>
+            </div>
+          
+            <div class="ui segment accordion">
+              <div class=" title">
+                <i class="dropdown icon"></i>题目2 
+              </div>
+              <div class="active content">
+                <p>Object.defineProperty()是否能在ie8中使用？</p>
+
+              </div>
+
+              <div class=" title">
+                <i class="dropdown icon"></i>答案
+        
+              </div>
+              <div class=" content">
+                <p>不能。在[这里](https://www.caniuse.com/</p>
+
+              </div>
+            </div>
+          
+            <div class="ui segment accordion">
+              <div class=" title">
+                <i class="dropdown icon"></i>题目3 
+              </div>
+              <div class="active content">
+                <p>属性描述符一共有几个？</p>
+
+              </div>
+
+              <div class=" title">
+                <i class="dropdown icon"></i>答案
+        
+              </div>
+              <div class=" content">
+                <p>6个。分别是configurable,enumable, value,writable,get,set;</p>
+
+              </div>
+            </div>
+          
+            <div class="ui segment accordion">
+              <div class=" title">
+                <i class="dropdown icon"></i>题目4 
+              </div>
+              <div class="active content">
+                <p>如何让一个对象属性处于只读状态。例如：</p>
+<pre><code class="language-javascript">var obj = {a:1}
+// 你的代码。
+obj.a = 20;
+console.log(obj.a) // ==&gt; 1
+</code></pre>
+
+              </div>
+
+              <div class=" title">
+                <i class="dropdown icon"></i>答案
+        
+              </div>
+              <div class=" content">
+                <pre><code class="language-javascript">var obj = {a:1}
+// 你的代码
+Object.defineProperty(obj,'a',{
+    writable:false
+})
+obj.a = 20;
+console.log(obj.a) // ==&gt; 1
+</code></pre>
+
+              </div>
+            </div>
+          
+            <div class="ui segment accordion">
+              <div class=" title">
+                <i class="dropdown icon"></i>题目5 
+              </div>
+              <div class="active content">
+                <p>get,set能和value一起使用吗？</p>
+
+              </div>
+
+              <div class=" title">
+                <i class="dropdown icon"></i>答案
+        
+              </div>
+              <div class=" content">
+                <p>不能。</p>
+
+              </div>
+            </div>
+          
+            <div class="ui segment accordion">
+              <div class=" title">
+                <i class="dropdown icon"></i>题目6 
+              </div>
+              <div class="active content">
+                <p>如何理解get,set是拦截器？</p>
+
+              </div>
+
+              <div class=" title">
+                <i class="dropdown icon"></i>答案
+        
+              </div>
+              <div class=" content">
+                <p>当给一个属性定义了get,set之后，就说明它不能直接用来保存具体的数据了，数据只能保存在另一个变量中。此时我们就说这个属性是那个变量的拦截器。</p>
+<p>如下的代码中：</p>
+<pre><code class="language-javascript">var obj = {}
+var _a = 1
+Object.defineProperty(obj,&quot;a&quot;,{
+    set(val){ _a = val},
+    get(){ return _a;}
+})
+</code></pre>
+<p>obj.a就是_a的拦截器，获取和设置_a的两个操作都必须要经过obj.a的set,get函数。</p>
+
+              </div>
+            </div>
+          
+            <div class="ui segment accordion">
+              <div class=" title">
+                <i class="dropdown icon"></i>题目7 
+              </div>
+              <div class="active content">
+                <p>Object.defineProperty与vue框架有什么关系？</p>
+
+              </div>
+
+              <div class=" title">
+                <i class="dropdown icon"></i>答案
+        
+              </div>
+              <div class=" content">
+                <p>vue.js 2.X版本中使用它来实现数据响应式效果。</p>
+
+              </div>
+            </div>
+          
+            <div class="ui segment accordion">
+              <div class=" title">
+                <i class="dropdown icon"></i>题目8 
+              </div>
+              <div class="active content">
+                <p>如何使用proxy来实现一个允许下标为负的数组。</p>
+
+              </div>
+
+              <div class=" title">
+                <i class="dropdown icon"></i>答案
+        
+              </div>
+              <div class=" content">
+                <pre><code class="language-javascript">var arr = [1,2,3];
+var proxyArr = new Proxy(arr,{
+  get: (target,prop)=&gt;{
+    let index = Number(prop);
+    if(index &lt; 0){
+      prop = target.length + index;
+    }
+    return target[prop];
+  }
+})
+
+console.info(arr[-1]);   // undefined
+
+console.info(proxyArr[-1]); // 3
+</code></pre>
+
+              </div>
+            </div>
+          
+            <div class="ui segment accordion">
+              <div class=" title">
+                <i class="dropdown icon"></i>题目9 
+              </div>
+              <div class="active content">
+                <p>如何用proxy来实现访问不存在的属性名时给出更加优雅的提示。</p>
+<pre><code class="language-javascript">const con = {
+ COMPANYNAME:&quot;jd&quot;,
+}
+// 你的代码
+//let proxyConst = ...;//
+
+console.log(proxyConst.abc); // 提示abc属性不存在。
+</code></pre>
+
+              </div>
+
+              <div class=" title">
+                <i class="dropdown icon"></i>答案
+        
+              </div>
+              <div class=" content">
+                <pre><code class="language-javascript">const con = {
+ COMPANYNAME:&quot;jd&quot;,
+}
+
+let proxyConst = new Proxy(con, {
+  get: function (target, key, receiver) {
+    if(key in target)
+    return target[key];
+    else{
+      throw new Error(&quot;error:常量名&quot;+key+&quot;不存在！&quot;)
+    }
+  }
+
+});
+</code></pre>
+
+              </div>
+            </div>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="../static/js/baidu.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.17.1/build/highlight.min.js"></script>
+  <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdn.bootcss.com/semantic-ui/2.4.1/semantic.min.js"></script>
+  <script src="https://cdn.bootcss.com/semantic-ui/2.4.1/components/accordion.js"></script>
+  <script>
+          $('.ui.accordion')
+  .accordion()
+;
+  </script>
+
+  </body>
+</html>
